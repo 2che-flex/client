@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+.font10 {
+  font-size: 10px;
+}
+.font12 {
+  font-size: 12px;
+}
+.font14 {
+  font-size: 14px;
+}
+.font16 {
+  font-size: 16px;
+}
+.font18 {
+  font-size: 18px;
+}
+.font20 {
+  font-size: 20px;
+}
+.font22 {
+  font-size: 22px;
+}
+.font24 {
+  font-size: 24px;
+}
+.font26 {
+  font-size: 26px;
+}
+.font28 {
+  font-size: 28px;
+}
+.primaryColor {
+  color: #ec1f63;
+}
+.btn-theme {
+  background-color: #ec1f63;
+  color: white;
+}
+.btn-theme:hover {
+  background-color: #ec1f63;
+  color: white;
+  box-shadow: 3px 3px 20px 3px rgba(236, 31, 99, 0.3);
+  font-weight: bolder;
+}
+.vw100 {
+  width: 100vw;
+}
+.vh100 {
+  height: 100vh;
+}
+.inset-0 {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.op-2 {
+  opacity: 0.3;
+}
+.letter-normal {
+  letter-spacing: 0.07em;
+}
+.letter-extra {
+  letter-spacing: 0.07em;
+}
+.bg-black {
+  background-color: black;
+}
+.mt-7 {
+  margin-top: 5rem;
+}
+.mt-8 {
+  margin-top: 6rem;
+}
+.mt-9 {
+  margin-top: 7em;
+}
+.mt-10 {
+  margin-top: 8rem;
+}
+.mt-11 {
+  margin-top: 9rem;
+}
+.mt-12 {
+  margin-top: 10rem;
+}
+.border-n {
+  border: 0px;
+}
+.mt-title {
+  margin-top: 5rem;
+}
+.mt-content {
+  margin-top: 8rem;
+}
+.mt-footer {
+  margin-top: 13rem;
+}
+.img-hero {
+  width: 100vw;
+  height: 100vh;
+}
+.w-responsive {
+  width: 50%;
+}
+.text-responsive {
+  text-align: center;
+}
+.px-responsive {
+  padding: 0;
+}
+.l-42 {
+  line-height: 30px;
+}
+.text-card {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font-size: 18px;
+  cursor: pointer;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .px-responsive {
+    padding: 0 2rem;
+  }
+  .text-responsive {
+    text-align: justify;
+  }
+  .w-responsive {
+    width: 100%;
+  }
+  .mt-title {
+    margin-top: 2rem;
+  }
+  .mt-content {
+    margin-top: 4rem;
+  }
+  .mt-footer {
+    margin-top: 6rem;
+  }
+  .img-hero {
+    width: 100vw;
+    height: 50vh;
+  }
+  .font10-mobile {
+    font-size: 10px;
+  }
+  .font14-mobile {
+    font-size: 14px;
+  }
+  .font16-mobile {
+    font-size: 16px;
+  }
+  .font18-mobile {
+    font-size: 18px;
+  }
+  .font13-mobile {
+    font-size: 13px;
+  }
+  .font11-mobile {
+    font-size: 1px;
+  }
+  .font12-mobile {
+    font-size: 12px;
+  }
+  .font14-mobile {
+    font-size: 14px;
+  }
+  .font16-mobile {
+    font-size: 16px;
+  }
+  .font18-mobile {
+    font-size: 18px;
+  }
+  .font20-mobile {
+    font-size: 20px;
+  }
+  .font24-mobile {
+    font-size: 24px;
+  }
+  .font26-mobile {
+    font-size: 26px;
+  }
+}
