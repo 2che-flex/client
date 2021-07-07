@@ -4,7 +4,7 @@
       <img
         src="~/assets/image/LogoFlex.png"
         class="mx-auto"
-        style="width:50%"
+        style="width:40%"
         alt=""
       />
 
