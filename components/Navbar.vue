@@ -18,25 +18,25 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item me-5">
-            <a
-              class="nav-link active text-light fw-bolder font18 letter-normal"
-              aria-current="page"
-              href="#"
-              >OUR WORK</a
+            <nuxt-link
+              :class="
+                active == 'Home'
+                  ? 'nav-link active fw-bolder text-light font18 letter-normal'
+                  : 'nav-link  text-light font18 letter-normal'
+              "
+              to="/"
+              >HOME</nuxt-link
             >
           </li>
           <li class="nav-item me-5">
-            <a
-              class="nav-link fw-light  font18 text-light letter-normal"
-              href="#"
-              >OUR SERVICES</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link fw-light  font18 text-light letter-normal"
-              href="#"
-              >DIRECTORS</a
+            <nuxt-link
+              :class="
+                active == 'Contact'
+                  ? 'nav-link active fw-bolder text-light font18 letter-normal'
+                  : 'nav-link  text-light font18 letter-normal'
+              "
+              to="/Contact"
+              >CONTACT</nuxt-link
             >
           </li>
         </ul>
@@ -47,3 +47,8 @@
     </div>
   </nav>
 </template>
+<script>
+export default {
+  props: ["active"]
+};
+</script>

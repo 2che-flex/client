@@ -1,7 +1,7 @@
 <template>
   <div class="px-0 overflow-hidden bg-black">
     <!-- START: NAVBAR -->
-    <Navbar />
+    <div class="container"><Navbar :active="'Contact'" /></div>
     <!-- END: NAVBAR -->
     <!-- START: WHERE -->
     <div class="mt-title">

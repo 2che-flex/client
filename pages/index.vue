@@ -2,7 +2,7 @@
   <div class="px-0 overflow-hidden bg-black">
     <!-- START: NAVBAR -->
     <div class="position-absolute container inset-0">
-      <Navbar />
+      <Navbar :active="'Home'" />
     </div>
     <!-- END: NAVBAR -->
     <!-- START: HERO SECTION -->
