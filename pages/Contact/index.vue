@@ -51,8 +51,8 @@
                 <p class="text-light mb-0 ms-3 font16">081386465464</p>
               </div>
               <div class="d-flex align-items-center mt-2">
-                <img src="~/assets/icon/telepon.svg" alt="" />
-                <p class="text-light mb-0 ms-3 font16 mb-0">081386465464</p>
+                <img src="~/assets/icon/gmail3.svg" alt="" />
+                <p class="text-light mb-0 ms-3 font16 mb-0">flex@email.com</p>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@
                 <p class="text-light mb-0 ms-3 font16">081386465464</p>
               </div>
               <div class="d-flex align-items-center mt-2">
-                <img src="~/assets/icon/telepon.svg" alt="" />
-                <p class="text-light mb-0 ms-3 font16 mb-0">081386465464</p>
+                <img src="~/assets/icon/gmail3.svg" alt="" />
+                <p class="text-light mb-0 ms-3 font16 mb-0">flex@email.com</p>
               </div>
             </div>
           </div>
@@ -101,8 +101,8 @@
                 <p class="text-light mb-0 ms-3 font16">081386465464</p>
               </div>
               <div class="d-flex align-items-center mt-2">
-                <img src="~/assets/icon/telepon.svg" alt="" />
-                <p class="text-light mb-0 ms-3 font16 mb-0">081386465464</p>
+                <img src="~/assets/icon/gmail3.svg" alt="" />
+                <p class="text-light mb-0 ms-3 font16 mb-0">flex@email.com</p>
               </div>
             </div>
           </div>
