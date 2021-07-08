@@ -16,27 +16,17 @@
       <h1 class="fw-bolder letter-normal text-center text-light">
         POPULAR WORK
       </h1>
-      <div
-        class="row row-cols-1 row-cols-lg-3  g-2 g-lg-3 mt-5 container mx-auto "
-      >
-        <div class="col">
-          <Card />
-        </div>
-        <div class="col">
-          <Card />
-        </div>
-        <div class="col">
-          <Card />
-        </div>
-        <div class="col">
-          <Card />
-        </div>
-        <div class="col">
-          <Card />
-        </div>
-        <div class="col">
-          <Card />
-        </div>
+      <div class="container mx-auto" v-if="data.length > 0">
+        <VueSlickCarousel v-bind="settings" :dots="true" :arrows="true">
+          <div v-for="(item, i) in data" :key="i">
+            <Card
+              :title="item.title"
+              :description="item.description"
+              :url="item.url"
+              :type="item.type"
+            />
+          </div>
+        </VueSlickCarousel>
       </div>
     </div>
     <!-- END: POPULAR WORK -->
@@ -96,10 +86,67 @@
 </template>
 
 <script>
-export default {};
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// optional style for arrows & dots
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import axios from "axios";
+export default {
+  components: { VueSlickCarousel },
+  data() {
+    return {
+      settings: {
+        infinite: true,
+        slidesToShow: 3,
+        speed: 500,
+        rows: 2,
+        slidesPerRow: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      },
+      data: []
+    };
+  },
+  methods: {
+    getProject() {
+      console.log("wkkwkw");
+      axios
+        .get(`https://server-flex.herokuapp.com/api/v1`)
+        .then(res => {
+          console.log(res.data.items, "wkwk");
+          this.data = res.data.items;
+        })
+        .catch(err => console.log(err));
+    }
+  },
+  mounted() {
+    this.getProject();
+  }
+};
 </script>
 
-<style scoped>
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-}
-</style>
+<style></style>

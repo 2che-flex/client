@@ -52,3 +52,4 @@ export default {
   props: ["active"]
 };
 </script>
+<style scoped></style>
