@@ -13,6 +13,16 @@
           Citylofts 920 Jl. KH. Mas Mansyur <br />
           Kav.121 Jakarta 10220, Indonesia
         </h5>
+        <div class="d-flex justify-content-center mt-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.413854483472!2d106.81621051486623!3d-6.209018662548826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f40284aeba2d%3A0x8523f9ff207a98e7!2sCItywalk%20Sudirman!5e0!3m2!1sid!2sid!4v1625755345511!5m2!1sid!2sid"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
     </div>
     <!-- END: WHERE -->
@@ -27,7 +37,7 @@
             <div class="bg-black position-absolute inset-0 op-2"></div>
             <img
               src="~/assets/image/img-ex1.png"
-              style="height:40vh"
+              style="height:45vh"
               class="card-img-top w-100"
               alt="..."
             />
@@ -52,7 +62,7 @@
             <div class="bg-black position-absolute inset-0 op-2"></div>
             <img
               src="~/assets/image/img-ex1.png"
-              style="height:40vh"
+              style="height:45vh"
               class="card-img-top w-100"
               alt="..."
             />
@@ -77,7 +87,7 @@
             <div class="bg-black position-absolute inset-0 op-2"></div>
             <img
               src="~/assets/image/img-ex1.png"
-              style="height:40vh"
+              style="height:45vh"
               class="card-img-top w-100"
               alt="..."
             />

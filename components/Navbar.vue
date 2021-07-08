@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light container">
+  <nav class="navbar navbar-expand-lg navbar-dark container">
     <div class="container-fluid px-0">
       <a class="navbar-brand me-0" href="#"
         ><img src="~/assets/image/LogoFlex.png" class="w-50" alt=""
