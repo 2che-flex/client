@@ -12,7 +12,7 @@
     <!-- END: HERO SECTION -->
 
     <!-- START: POPULAR WORK -->
-    <div class="mt-title" data-aos="fade-up" data-aos-duration="3000">
+    <div class="mt-title">
       <h1 class="fw-bolder letter-normal text-center text-light">
         POPULAR WORK
       </h1>
@@ -20,6 +20,9 @@
         <VueSlickCarousel v-bind="settings" :dots="true" :arrows="true">
           <div v-for="(item, i) in data" :key="i">
             <Card
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              @showDetail="showDetail"
               :title="item.title"
               :description="item.description"
               :url="item.url"
@@ -28,6 +31,12 @@
           </div>
         </VueSlickCarousel>
       </div>
+      <ModalVideo
+        :title="dataTitle"
+        :type="dataType"
+        :url="dataUrl"
+        :description="dataDescription"
+      />
     </div>
     <!-- END: POPULAR WORK -->
     <!-- START: WE ARE FLEX -->
@@ -128,7 +137,11 @@ export default {
           }
         ]
       },
-      data: []
+      data: [],
+      dataTitle: "",
+      dataType: "",
+      dataUrl: "",
+      dataDescription: ""
     };
   },
   methods: {
@@ -141,6 +154,12 @@ export default {
           this.data = res.data.items;
         })
         .catch(err => console.log(err));
+    },
+    showDetail(title, type, url, description) {
+      this.dataTitle = title;
+      this.dataType = type;
+      this.dataUrl = url;
+      this.dataDescription = description;
     }
   },
   mounted() {

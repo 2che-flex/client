@@ -1,5 +1,9 @@
 <template>
-  <div class="card border-n container-image m-2" style="border-radius:0px">
+  <div
+    @click="showDetail()"
+    class="card border-n container-image m-2"
+    style="border-radius:0px"
+  >
     <img
       :src="url"
       style="height:30vh"
@@ -24,7 +28,25 @@
 </template>
 <script>
 export default {
-  props: ["title", "type", "url", "description"]
+  props: ["title", "type", "url", "description"],
+  methods: {
+    showDetail() {
+      console.log(
+        this.title,
+        this.type,
+        this.url,
+        this.description,
+        "hai arinda"
+      );
+      this.$emit(
+        "showDetail",
+        this.title,
+        this.type,
+        this.url,
+        this.description
+      );
+    }
+  }
 };
 </script>
 <style scoped>

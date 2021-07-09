@@ -36,14 +36,17 @@
           <div class="card border-n" style="border-radius:0px">
             <div class="bg-black position-absolute inset-0 op-2"></div>
             <img
-              src="~/assets/image/img-ex1.png"
+              src="~/assets/image/novin.png"
               style="height:45vh"
               class="card-img-top w-100"
               alt="..."
             />
             <div class="card-body text-card">
-              <h1 class="text-white fw-bold font24 mb-0">Novindra Christian</h1>
-              <p class="text-light">
+              <h1 class="text-white fw-bold font24 mb-1">
+                Novindra <br />
+                Christian
+              </h1>
+              <p class="fw-lighter text-white">
                 The Crazy Boss
               </p>
               <div class="d-flex align-items-center mt-3">
@@ -61,15 +64,18 @@
           <div class="card border-n" style="border-radius:0px">
             <div class="bg-black position-absolute inset-0 op-2"></div>
             <img
-              src="~/assets/image/img-ex1.png"
+              src="~/assets/image/floris.png"
               style="height:45vh"
               class="card-img-top w-100"
               alt="..."
             />
             <div class="card-body text-card">
-              <h1 class="text-white fw-bold font24 mb-0">Novindra Christian</h1>
-              <p class="text-light">
-                The Crazy Boss
+              <h1 class="text-white fw-bold font24 mb-1">
+                Floris <br />
+                Kingma
+              </h1>
+              <p class="fw-lighter text-white">
+                Film Director
               </p>
               <div class="d-flex align-items-center mt-3">
                 <img src="~/assets/icon/telepon.svg" alt="" />
@@ -86,15 +92,18 @@
           <div class="card border-n" style="border-radius:0px">
             <div class="bg-black position-absolute inset-0 op-2"></div>
             <img
-              src="~/assets/image/img-ex1.png"
+              src="~/assets/image/michael.png"
               style="height:45vh"
               class="card-img-top w-100"
               alt="..."
             />
             <div class="card-body text-card">
-              <h1 class="text-white fw-bold font24 mb-0">Novindra Christian</h1>
-              <p class="text-light">
-                The Crazy Boss
+              <h1 class="text-white fw-bold font24 mb-1">
+                Michael <br />
+                Sewandono
+              </h1>
+              <p class="fw-lighter text-white">
+                Film Director
               </p>
               <div class="d-flex align-items-center mt-3">
                 <img src="~/assets/icon/telepon.svg" alt="" />
