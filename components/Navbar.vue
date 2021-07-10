@@ -21,7 +21,7 @@
             <nuxt-link
               :class="
                 active == 'Home'
-                  ? 'nav-link active fw-bolder text-light font18 letter-normal'
+                  ? 'nav-link active fw-bolder text-dark font18 letter-normal'
                   : 'nav-link  text-light font18 letter-normal'
               "
               to="/"
@@ -33,7 +33,7 @@
               :class="
                 active == 'Contact'
                   ? 'nav-link active fw-bolder text-light font18 letter-normal'
-                  : 'nav-link  text-light font18 letter-normal'
+                  : 'nav-link  text-dark font18 letter-normal'
               "
               to="/Contact"
               >CONTACT</nuxt-link
@@ -41,6 +41,7 @@
           </li>
         </ul>
         <button
+          @click="openModal"
           data-bs-toggle="modal"
           data-bs-target="#modalContact"
           class="btn btn-theme px-4 fw-light rounded-pill"
@@ -50,12 +51,16 @@
         </button>
       </div>
     </div>
-    <ModalContact />
   </nav>
 </template>
 <script>
 export default {
-  props: ["active"]
+  props: ["active"],
+  methods: {
+    openModal() {
+      this.$emit("openModal", true);
+    }
+  }
 };
 </script>
 <style scoped></style>

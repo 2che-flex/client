@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-  props: ["title", "type", "url", "description"],
+  props: ["title", "type", "url", "description", "videoUrl"],
   methods: {
     showDetail() {
       console.log(
@@ -43,7 +43,8 @@ export default {
         this.title,
         this.type,
         this.url,
-        this.description
+        this.description,
+        this.videoUrl
       );
     }
   }

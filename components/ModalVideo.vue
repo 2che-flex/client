@@ -21,7 +21,16 @@
             ></button>
           </div> -->
           <div class="modal-body p-0 m-0">
-            <img :src="url" style="width:100%" alt="" />
+            <!-- <img :src="url" style="width:100%" alt="" /> -->
+            <iframe
+              width="100%"
+              height="400"
+              :src="video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
             <div class="px-3 mt-4 mb-5">
               <h1 class="font24 font18-mobile mb-1">{{ title }}</h1>
               <p class="font18 font14-mobile">{{ description }}</p>
@@ -44,6 +53,6 @@
 
 <script>
 export default {
-  props: ["title", "type", "url", "description"]
+  props: ["title", "type", "url", "description", "video"]
 };
 </script>

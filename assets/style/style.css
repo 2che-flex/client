@@ -93,13 +93,13 @@
   border: 0px;
 }
 .mt-title {
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 .mt-content {
-  margin-top: 8rem;
+  margin-top: 10rem;
 }
 .mt-footer {
-  margin-top: 13rem;
+  margin-top: 14rem;
 }
 .img-hero {
   width: 100vw;
@@ -135,13 +135,13 @@
     width: 100%;
   }
   .mt-title {
-    margin-top: 2rem;
-  }
-  .mt-content {
     margin-top: 4rem;
   }
+  .mt-content {
+    margin-top: 5rem;
+  }
   .mt-footer {
-    margin-top: 6rem;
+    margin-top: 12rem;
   }
   .img-hero {
     width: 100vw;

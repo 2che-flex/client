@@ -33,7 +33,7 @@
       <h1 class="fw-bolder letter-normal text-center text-light">
         Meet Our Team
       </h1>
-      <div class="row row-cols-1 row-cols-lg-3  mt-5 container mx-auto ">
+      <div class="row row-cols-1 row-cols-lg-3  mt-4 container mx-auto ">
         <div class="col position-relative mx-0 px-0">
           <div class="card border-n" style="border-radius:0px">
             <div class="bg-black position-absolute inset-0 op-2"></div>

@@ -1,11 +1,10 @@
 <template>
   <div class="px-0 overflow-hidden bg-black">
     <!-- START: NAVBAR -->
-    <div
-      class="position-absolute container inset-0"
-      style="z-index:9999999999999999"
-    >
-      <Navbar :active="'Home'" />
+    <div class="position-relative">
+      <div class="position-absolute container inset-0" style="z-index:9999">
+        <Navbar :active="'Home'" @openModal="openModal" />
+      </div>
     </div>
     <!-- END: NAVBAR -->
     <!-- START: HERO SECTION -->
@@ -13,11 +12,11 @@
       <!-- <img src="~/assets/image/img-hero.png" class="img-hero" alt="" /> -->
       <VueSlickCarousel v-bind="settingsBanner">
         <div v-for="(banner, i) in dataBanner" :key="i">
+          <img :src="banner.image_url" class="img-hero" alt="" />
           <!-- <iframe
             width="100%"
             height="400"
-            src="https://www.youtube.com/embed/WTTHNHggeUU"
-            title="YouTube video player"
+            src="https://www.youtube-nocookie.com/embed/_QrBbXRK844?autoplay=1&controls=0&mute=1"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -33,7 +32,7 @@
       <h1 class="fw-bolder letter-normal text-center text-light">
         POPULAR WORK
       </h1>
-      <div class="container mx-auto" v-if="data.length > 0">
+      <div class="container mt-4 mx-auto" v-if="data.length > 0">
         <VueSlickCarousel v-bind="settings" :dots="true" :arrows="true">
           <div v-for="(item, i) in data" :key="i">
             <Card
@@ -44,6 +43,7 @@
               :description="item.description"
               :url="item.url"
               :type="item.type"
+              :videoUrl="item.video_url"
             />
           </div>
         </VueSlickCarousel>
@@ -53,6 +53,7 @@
         :type="dataType"
         :url="dataUrl"
         :description="dataDescription"
+        :video="videoLink"
       />
     </div>
     <!-- END: POPULAR WORK -->
@@ -92,6 +93,7 @@
         </p>
         <div class="text-center mt-5">
           <button
+            @click="openModal(true)"
             data-bs-toggle="modal"
             data-bs-target="#modalContact"
             class="btn btn-theme px-4 fw-light rounded-pill"
@@ -110,7 +112,10 @@
       </div>
     </div>
     <!-- END: FOOTER  -->
-    <ModalContact />
+    <div v-if="modal == true">
+      <ModalContact @openModal="openModal" />
+      <div class="modal-backdrop fade show"></div>
+    </div>
   </div>
 </template>
 
@@ -171,7 +176,9 @@ export default {
       dataType: "",
       dataUrl: "",
       dataDescription: "",
-      dataBanner: []
+      dataBanner: [],
+      modal: false,
+      videoLink: ""
     };
   },
   methods: {
@@ -180,12 +187,14 @@ export default {
         `https://server-flex.herokuapp.com/api/v1`
       );
       this.data = data.items;
+      console.log(data.items);
     },
-    showDetail(title, type, url, description) {
+    showDetail(title, type, url, description, video) {
       this.dataTitle = title;
       this.dataType = type;
       this.dataUrl = url;
       this.dataDescription = description;
+      this.videoLink = video;
     },
     async showBanner() {
       const { data } = await axios.get(
@@ -193,6 +202,9 @@ export default {
       );
       this.dataBanner = data.videos;
       // console.log(data.videos, "banner");
+    },
+    openModal(value) {
+      this.modal = value;
     }
   },
   mounted() {

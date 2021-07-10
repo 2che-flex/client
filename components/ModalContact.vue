@@ -1,13 +1,6 @@
 <template>
   <div>
-    <div
-      class="modal fade"
-      id="modalContact"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
+    <div class="showModal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -45,7 +38,7 @@
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
+              @click="openModal()"
             >
               Close
             </button>
@@ -59,11 +52,12 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "ModalContact",
   data() {
     return {
-      namaPengirim: "wkwkwk",
+      namaPengirim: "",
       emailPengirim: "",
       noHp: ""
     };
@@ -76,7 +70,37 @@ export default {
         this.noHp,
         "arinda wkwk"
       );
+      let newData = {
+        name: this.namaPengirim,
+        email: this.emailPengirim,
+        phone_number: this.noHp
+      };
+      axios
+        .post(" https://server-flex.herokuapp.com/api/v1/client", newData)
+        .then(response => {
+          this.$emit("openModal", false);
+        })
+        .catch(err => {
+          this.$emit("openModal", false);
+        });
+    },
+    openModal() {
+      this.$emit("openModal", false);
     }
   }
 };
 </script>
+<style scoped>
+.showModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999999999999;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+</style>
