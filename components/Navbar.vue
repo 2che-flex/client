@@ -40,11 +40,17 @@
             >
           </li>
         </ul>
-        <button class="btn btn-theme px-4 fw-light rounded-pill" type="submit">
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#modalContact"
+          class="btn btn-theme px-4 fw-light rounded-pill"
+          type="button"
+        >
           GET IN TOUCH
         </button>
       </div>
     </div>
+    <ModalContact />
   </nav>
 </template>
 <script>

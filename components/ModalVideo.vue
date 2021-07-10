@@ -2,7 +2,7 @@
   <div class="position-relative" style="z-index:99999;">
     <div
       class="modal fade"
-      id="staticBackdrop"
+      id="modalDetail"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
@@ -23,8 +23,8 @@
           <div class="modal-body p-0 m-0">
             <img :src="url" style="width:100%" alt="" />
             <div class="px-3 mt-4 mb-5">
-              <h1 class="font24 font20-mobile mb-1">{{ title }}</h1>
-              <p class="font18 font16-mobile">{{ description }}</p>
+              <h1 class="font24 font18-mobile mb-1">{{ title }}</h1>
+              <p class="font18 font14-mobile">{{ description }}</p>
             </div>
           </div>
           <div class="modal-footer">

@@ -1,13 +1,30 @@
 <template>
   <div class="px-0 overflow-hidden bg-black">
     <!-- START: NAVBAR -->
-    <div class="position-absolute container inset-0">
+    <div
+      class="position-absolute container inset-0"
+      style="z-index:9999999999999999"
+    >
       <Navbar :active="'Home'" />
     </div>
     <!-- END: NAVBAR -->
     <!-- START: HERO SECTION -->
-    <section class="">
-      <img src="~/assets/image/img-hero.png" class="img-hero" alt="" />
+    <section v-if="dataBanner.length > 0">
+      <!-- <img src="~/assets/image/img-hero.png" class="img-hero" alt="" /> -->
+      <VueSlickCarousel v-bind="settingsBanner">
+        <div v-for="(banner, i) in dataBanner" :key="i">
+          <!-- <iframe
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/WTTHNHggeUU"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe> -->
+        </div>
+      </VueSlickCarousel>
     </section>
     <!-- END: HERO SECTION -->
 
@@ -21,7 +38,7 @@
           <div v-for="(item, i) in data" :key="i">
             <Card
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
+              data-bs-target="#modalDetail"
               @showDetail="showDetail"
               :title="item.title"
               :description="item.description"
@@ -75,6 +92,8 @@
         </p>
         <div class="text-center mt-5">
           <button
+            data-bs-toggle="modal"
+            data-bs-target="#modalContact"
             class="btn btn-theme px-4 fw-light rounded-pill"
             type="submit"
           >
@@ -91,6 +110,7 @@
       </div>
     </div>
     <!-- END: FOOTER  -->
+    <ModalContact />
   </div>
 </template>
 
@@ -104,6 +124,15 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
+      settingsBanner: {
+        dots: true,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      },
       settings: {
         infinite: true,
         slidesToShow: 3,
@@ -141,29 +170,34 @@ export default {
       dataTitle: "",
       dataType: "",
       dataUrl: "",
-      dataDescription: ""
+      dataDescription: "",
+      dataBanner: []
     };
   },
   methods: {
-    getProject() {
-      console.log("wkkwkw");
-      axios
-        .get(`https://server-flex.herokuapp.com/api/v1`)
-        .then(res => {
-          console.log(res.data.items, "wkwk");
-          this.data = res.data.items;
-        })
-        .catch(err => console.log(err));
+    async getProject() {
+      const { data } = await axios.get(
+        `https://server-flex.herokuapp.com/api/v1`
+      );
+      this.data = data.items;
     },
     showDetail(title, type, url, description) {
       this.dataTitle = title;
       this.dataType = type;
       this.dataUrl = url;
       this.dataDescription = description;
+    },
+    async showBanner() {
+      const { data } = await axios.get(
+        "https://server-flex.herokuapp.com/api/v1/banner"
+      );
+      this.dataBanner = data.videos;
+      // console.log(data.videos, "banner");
     }
   },
   mounted() {
     this.getProject();
+    this.showBanner();
   }
 };
 </script>

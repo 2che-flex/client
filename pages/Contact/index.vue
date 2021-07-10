@@ -9,7 +9,9 @@
         POPULAR WORK
       </h1>
       <div class="w-responsive px-responsive mx-auto mt-4">
-        <h5 class="text-responsive text-light fw-light l-42 letter-extra">
+        <h5
+          class="text-responsive font22 font18-mobile text-light fw-light l-42 letter-extra"
+        >
           Citylofts 920 Jl. KH. Mas Mansyur <br />
           Kav.121 Jakarta 10220, Indonesia
         </h5>
