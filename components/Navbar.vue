@@ -15,14 +15,17 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse mt-mobile"
+        id="navbarSupportedContent"
+      >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item me-5">
             <nuxt-link
               :class="
                 active == 'Home'
-                  ? 'nav-link active fw-bolder text-dark font18 letter-normal'
-                  : 'nav-link  text-light font18 letter-normal'
+                  ? 'nav-link active fw-bolder text-light font20 letter-normal'
+                  : 'nav-link  text-light font20 letter-normal'
               "
               to="/"
               >HOME</nuxt-link
@@ -32,8 +35,8 @@
             <nuxt-link
               :class="
                 active == 'Contact'
-                  ? 'nav-link active fw-bolder text-light font18 letter-normal'
-                  : 'nav-link  text-dark font18 letter-normal'
+                  ? 'nav-link active fw-bolder text-light font20 letter-normal'
+                  : 'nav-link  text-light font20 letter-normal'
               "
               to="/Contact"
               >CONTACT</nuxt-link
@@ -63,4 +66,10 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .mt-mobile {
+    margin-top: 1.5rem;
+  }
+}
+</style>

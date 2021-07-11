@@ -10,6 +10,7 @@
     <!-- START: HERO SECTION -->
     <section v-if="dataBanner.length > 0">
       <!-- <img src="~/assets/image/img-hero.png" class="img-hero" alt="" /> -->
+      <div class="coverBanner"></div>
       <VueSlickCarousel v-bind="settingsBanner">
         <div v-for="(banner, i) in dataBanner" :key="i">
           <img :src="banner.image_url" class="img-hero" alt="" />
@@ -214,4 +215,17 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.coverBanner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    rgba(255, 255, 255, 0) 161.08%
+  );
+  z-index: 999;
+  opacity: 0.7;
+}
+</style>
