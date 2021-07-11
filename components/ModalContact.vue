@@ -35,15 +35,18 @@
             </form>
           </div>
           <div class="modal-footer border-0">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              @click="openModal()"
-            >
+            <button type="button" class="btn btn-light" @click="openModal()">
               Close
             </button>
-            <button @click="sendTalk()" type="button" class="btn btn-primary">
-              Save changes
+            <button
+              :disabled="
+                namaPengirim == '' || emailPengirim == '' || noHp == ''
+              "
+              @click="sendTalk()"
+              type="button"
+              class="btn btn-dark"
+            >
+              Send Talk
             </button>
           </div>
         </div>
