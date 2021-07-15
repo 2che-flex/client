@@ -1,7 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark container">
-    <div class="container-fluid px-0">
-      <a class="navbar-brand me-0" href="#"
+  <nav
+    :class="
+      positionScroll > 20
+        ? 'navbar navbar-expand-lg navbar-dark bg-black'
+        : 'navbar navbar-expand-lg navbar-dark'
+    "
+  >
+    <div class="container px-0">
+      <a class="navbar-brand me-0" href="/"
         ><img src="~/assets/image/LogoFlex.png" class="w-50" alt=""
       /></a>
       <button
@@ -23,12 +29,23 @@
           <li class="nav-item me-5">
             <nuxt-link
               :class="
-                active == 'Home'
+                $route.hash == '#work'
                   ? 'nav-link active fw-bolder text-light font20 letter-normal'
                   : 'nav-link  text-light font20 letter-normal'
               "
-              to="/"
-              >HOME</nuxt-link
+              :to="$route.name !== 'Contact' ? '#work' : '/'"
+              >WORK</nuxt-link
+            >
+          </li>
+          <li class="nav-item me-5">
+            <nuxt-link
+              :class="
+                $route.hash == '#story'
+                  ? 'nav-link active fw-bolder text-light font20 letter-normal'
+                  : 'nav-link  text-light font20 letter-normal'
+              "
+              :to="$route.name !== 'Contact' ? '#story' : '/'"
+              >FLEX STORY</nuxt-link
             >
           </li>
           <li class="nav-item me-5">
@@ -43,7 +60,7 @@
             >
           </li>
         </ul>
-        <button
+        <!-- <button
           @click="openModal"
           data-bs-toggle="modal"
           data-bs-target="#modalContact"
@@ -51,7 +68,7 @@
           type="button"
         >
           GET IN TOUCH
-        </button>
+        </button> -->
       </div>
     </div>
   </nav>
@@ -59,14 +76,33 @@
 <script>
 export default {
   props: ["active"],
+  data() {
+    return {
+      positionScroll: 0
+    };
+  },
   methods: {
     openModal() {
       this.$emit("openModal", true);
+    },
+    cek() {
+      console.log(this.$route.hash, "routetteeee");
+    },
+    updateScroll() {
+      this.positionScroll = window.scrollY;
+      console.log(window.scrollY, "scroly");
     }
+  },
+  mounted() {
+    this.cek();
+    window.addEventListener("scroll", this.updateScroll);
   }
 };
 </script>
 <style scoped>
+.bg-black {
+  background-color: black;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mt-mobile {
     margin-top: 1.5rem;

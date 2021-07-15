@@ -4,12 +4,7 @@
     class="card border-n container-image m-2"
     style="border-radius:0px"
   >
-    <img
-      :src="url"
-      style="height:30vh"
-      class="card-img-top w-100 image"
-      :alt="description"
-    />
+    <img :src="url" class="card-img-top w-100 image" :alt="description" />
     <div class="overlay">
       <div class="text">
         <h1 class="font22 fw-bolder" style="letter-spacing: 0.05em;">
@@ -54,7 +49,9 @@ export default {
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 40vh !important;
+  object-fit: cover;
+  background-position: center;
 }
 
 .overlay {
@@ -84,5 +81,21 @@ export default {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+/* @media screen and (max-width: 1000px) {
+  .image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+  }
+} */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+    background-position: center;
+  }
 }
 </style>

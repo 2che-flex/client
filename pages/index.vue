@@ -2,7 +2,7 @@
   <div class="px-0 overflow-hidden bg-black">
     <!-- START: NAVBAR -->
     <div class="position-relative">
-      <div class="position-absolute container inset-0" style="z-index:9999">
+      <div class="position-fixed top-0 start-0 end-0" style="z-index:9999">
         <Navbar :active="'Home'" @openModal="openModal" />
       </div>
     </div>
@@ -29,11 +29,11 @@
     <!-- END: HERO SECTION -->
 
     <!-- START: POPULAR WORK -->
-    <div class="mt-title">
+    <div class="mt-title" id="work">
       <h1 class="fw-bolder letter-normal text-center text-light">
         POPULAR WORK
       </h1>
-      <div class="container mt-4 mx-auto" v-if="data.length > 0">
+      <div class="mt-4 mx-auto" v-if="data.length > 0">
         <VueSlickCarousel v-bind="settings" :dots="true" :arrows="true">
           <div v-for="(item, i) in data" :key="i">
             <Card
@@ -59,9 +59,14 @@
     </div>
     <!-- END: POPULAR WORK -->
     <!-- START: WE ARE FLEX -->
-    <div class="mt-content" data-aos="fade-up" data-aos-duration="3000">
+    <div
+      class="mt-content"
+      id="story"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <h1 class="text-center text-white px-2">WE ARE FLEX</h1>
-      <div class="w-responsive px-responsive mx-auto mt-4">
+      <div class="col-md-6 col-12 px-3 mx-auto mt-4">
         <p class="text-responsive text-light fw-light">
           Flex Films is a full service production company based in Jakarta,
           Indonesia. We have a passion in communicating ideas into a meaningful
@@ -83,7 +88,7 @@
     </div>
     <!-- END: WE ARE FLEX -->
     <!-- START: INTERESTED -->
-    <div class="mt-content" data-aos="fade-up" data-aos-duration="3000">
+    <!-- <div class="mt-content" data-aos="fade-up" data-aos-duration="3000">
       <h1 class="text-center text-white px-responsive">
         Interested to Work With Us ?
       </h1>
@@ -104,7 +109,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- END: INTERESTED -->
     <!-- START: FOOTER -->
     <div class="mt-footer">
@@ -156,11 +161,19 @@ export default {
             }
           },
           {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 1
+            }
+          },
+          {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              initialSlide: 2
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 1
             }
           },
           {

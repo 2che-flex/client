@@ -104,6 +104,8 @@
 .img-hero {
   width: 100vw;
   height: 100vh;
+  object-fit: cover;
+  background-position: center;
 }
 .w-responsive {
   width: 50%;
@@ -145,7 +147,9 @@
   }
   .img-hero {
     width: 100vw;
-    height: 50vh;
+    height: auto;
+    object-fit: cover;
+    background-position: center;
   }
   .font10-mobile {
     font-size: 10px;
