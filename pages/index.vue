@@ -30,7 +30,9 @@
 
     <!-- START: POPULAR WORK -->
     <div class="mt-title" id="work">
-      <h1 class="fw-bolder letter-normal text-center text-light">
+      <h1
+        class="fw-bolder font30 font28-mobile letter-normal text-center text-white"
+      >
         POPULAR WORK
       </h1>
       <div class="mt-4 mx-auto" v-if="data.length > 0">
@@ -65,7 +67,9 @@
       data-aos="fade-up"
       data-aos-duration="3000"
     >
-      <h1 class="text-center text-white px-2">WE ARE FLEX</h1>
+      <h1 class="text-center text-white px-2 font30 font28-mobile">
+        WE ARE FLEX
+      </h1>
       <div class="col-md-6 col-12 px-3 mx-auto mt-4">
         <p class="text-responsive text-light fw-light">
           Flex Films is a full service production company based in Jakarta,
@@ -240,5 +244,19 @@ export default {
   );
   z-index: 999;
   opacity: 0.7;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .coverBanner {
+    position: absolute;
+    width: 100%;
+    height: 32vh;
+    background: linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(255, 255, 255, 0) 161.08%
+    );
+    z-index: 999;
+    opacity: 0.7;
+  }
 }
 </style>

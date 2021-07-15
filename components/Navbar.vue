@@ -30,8 +30,8 @@
             <nuxt-link
               :class="
                 $route.hash == '#work'
-                  ? 'nav-link active fw-bolder text-light font20 letter-normal'
-                  : 'nav-link  text-light font20 letter-normal'
+                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
+                  : 'nav-link  text-light font18 letter-normal px-nav'
               "
               :to="$route.name !== 'Contact' ? '#work' : '/'"
               >WORK</nuxt-link
@@ -41,8 +41,8 @@
             <nuxt-link
               :class="
                 $route.hash == '#story'
-                  ? 'nav-link active fw-bolder text-light font20 letter-normal'
-                  : 'nav-link  text-light font20 letter-normal'
+                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
+                  : 'nav-link  text-light font18 letter-normal px-nav'
               "
               :to="$route.name !== 'Contact' ? '#story' : '/'"
               >FLEX STORY</nuxt-link
@@ -52,8 +52,8 @@
             <nuxt-link
               :class="
                 active == 'Contact'
-                  ? 'nav-link active fw-bolder text-light font20 letter-normal'
-                  : 'nav-link  text-light font20 letter-normal'
+                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
+                  : 'nav-link  text-light font18 letter-normal px-nav'
               "
               to="/Contact"
               >CONTACT</nuxt-link
@@ -106,6 +106,9 @@ export default {
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mt-mobile {
     margin-top: 1.5rem;
+  }
+  .px-nav {
+    padding-left: 1rem;
   }
 }
 </style>

@@ -34,6 +34,9 @@
 .font28 {
   font-size: 28px;
 }
+.font30 {
+  font-size: 30px;
+}
 .primaryColor {
   color: #ec1f63;
 }
@@ -189,5 +192,8 @@
   }
   .font26-mobile {
     font-size: 26px;
+  }
+  .font28-mobile {
+    font-size: 28px;
   }
 }

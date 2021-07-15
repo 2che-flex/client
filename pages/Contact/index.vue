@@ -5,8 +5,10 @@
     <!-- END: NAVBAR -->
 
     <!-- START: TEAM -->
-    <div class="mt-5">
-      <h1 class="fw-bolder letter-normal text-center text-light">
+    <div class="mt-4">
+      <h1
+        class="fw-bolder font30 font28-mobile letter-normal text-center text-light"
+      >
         Meet Our Team
       </h1>
       <div class="row row-cols-1 row-cols-lg-3  mt-4  mx-auto ">
@@ -100,7 +102,9 @@
     <!-- END: TEAM -->
     <!-- START: OFFICE -->
     <div class="mt-5">
-      <h1 class="fw-bolder letter-normal text-center text-light">
+      <h1
+        class="fw-bolder font30 font28-mobile letter-normal text-center text-light"
+      >
         OUR OFFICE
       </h1>
       <div class="w-responsive px-responsive mx-auto mt-4">
@@ -110,6 +114,17 @@
           Citylofts 920 Jl. KH. Mas Mansyur Kav.121 <br />
           Jakarta 10220, Indonesia
         </h5>
+        <div class="text-center my-4">
+          <button
+            @click="openModal(true)"
+            data-bs-toggle="modal"
+            data-bs-target="#modalContact"
+            class="btn btn-theme px-4 fw-light rounded-pill"
+            type="submit"
+          >
+            Get Directions
+          </button>
+        </div>
       </div>
     </div>
     <!-- END: OFFICE -->
