@@ -34,7 +34,7 @@
     <!-- END: HERO SECTION -->
 
     <!-- START: POPULAR WORK -->
-    <div class="mt-title" id="work">
+    <div class="mt-content" id="work">
       <h1
         class="fw-bolder font30 font28-mobile letter-normal text-center text-white"
       >
