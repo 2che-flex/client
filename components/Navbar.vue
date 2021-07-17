@@ -26,7 +26,7 @@
         id="navbarSupportedContent"
       >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item me-5">
+          <!-- <li class="nav-item me-5">
             <nuxt-link
               :class="
                 $route.hash == '#work'
@@ -36,6 +36,32 @@
               :to="$route.name !== 'Contact' ? '#work' : '/'"
               >WORK</nuxt-link
             >
+          </li> -->
+          <li class="nav-item dropdown me-5">
+            <a
+              :class="
+                $route.hash == '#work'
+                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
+                  : 'nav-link  text-light font18 letter-normal px-nav'
+              "
+              href="/"
+              :id="$route.name !== 'Contact' ? 'navbarDropdown' : ''"
+              :role="$route.name !== 'Contact' ? 'button' : ''"
+              :data-bs-toggle="$route.name !== 'Contact' ? 'dropdown' : ''"
+              :aria-expanded="$route.name !== 'Contact' ? 'false' : ''"
+            >
+              WORK
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li v-for="(item, i) in categories" :key="i">
+                <a
+                  class="dropdown-item"
+                  @click="sendCategory(item.id)"
+                  href="#work"
+                  >{{ item.name }}</a
+                >
+              </li>
+            </ul>
           </li>
           <li class="nav-item me-5">
             <nuxt-link
@@ -75,7 +101,7 @@
 </template>
 <script>
 export default {
-  props: ["active"],
+  props: ["active", "categories"],
   data() {
     return {
       positionScroll: 0
@@ -90,7 +116,9 @@ export default {
     },
     updateScroll() {
       this.positionScroll = window.scrollY;
-      console.log(window.scrollY, "scroly");
+    },
+    sendCategory(list) {
+      this.$emit("getProject", list);
     }
   },
   mounted() {

@@ -3,7 +3,12 @@
     <!-- START: NAVBAR -->
     <div class="position-relative">
       <div class="position-fixed top-0 start-0 end-0" style="z-index:9999">
-        <Navbar :active="'Home'" @openModal="openModal" />
+        <Navbar
+          @getProject="getProject"
+          :categories="dataCategories"
+          :active="'Home'"
+          @openModal="openModal"
+        />
       </div>
     </div>
     <!-- END: NAVBAR -->
@@ -151,8 +156,9 @@ export default {
       settings: {
         infinite: true,
         slidesToShow: 3,
-        speed: 500,
+        speed: 200,
         rows: 2,
+        autoplay: true,
         slidesPerRow: 1,
         responsive: [
           {
@@ -196,16 +202,24 @@ export default {
       dataDescription: "",
       dataBanner: [],
       modal: false,
-      videoLink: ""
+      videoLink: "",
+      dataCategories: []
     };
   },
   methods: {
-    async getProject() {
+    test(list) {
+      console.log(list, "home");
+    },
+    async getProject(list) {
       const { data } = await axios.get(
         `https://server-flex.herokuapp.com/api/v1`
       );
-      this.data = data.items;
-      console.log(data.items);
+      let work = data.items;
+      this.data =
+        list == undefined ? work : work.filter(e => e.CategoryId == list);
+      this.data.length <= 4
+        ? (this.settings.slidesToShow = 2)
+        : (this.settings.slidesToShow = 3);
     },
     showDetail(title, type, url, description, video) {
       this.dataTitle = title;
@@ -221,6 +235,19 @@ export default {
       this.dataBanner = data.videos;
       // console.log(data.videos, "banner");
     },
+    async getCategories() {
+      const { data } = await axios.get(
+        "https://server-flex.herokuapp.com/api/v1/category"
+      );
+      // console.log(data.categories, "cate");
+      this.dataCategories = [
+        ...data.categories,
+        {
+          id: undefined,
+          name: "All"
+        }
+      ];
+    },
     openModal(value) {
       this.modal = value;
     }
@@ -228,6 +255,7 @@ export default {
   mounted() {
     this.getProject();
     this.showBanner();
+    this.getCategories();
   }
 };
 </script>

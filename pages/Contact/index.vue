@@ -1,5 +1,5 @@
 <template>
-  <div class="px-0 overflow-hidden bg-black" style="height:100vh">
+  <div class="px-0 overflow-hidden bg-black h-responsive">
     <!-- START: NAVBAR -->
     <div class="container"><Navbar :active="'Contact'" /></div>
     <!-- END: NAVBAR -->
@@ -13,58 +13,58 @@
       </h1>
       <div class="container mt-5">
         <div class="row">
-          <div class="col-md-4 col-12 justify-center">
+          <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
               class="text-white text-center fw-bold font20 font18-mobile mb-1"
             >
               Novindra Christian
             </h1>
-            <p class="fw-lighter text-center text-white">
+            <p class="fw-lighter text-center text-white mb-0">
               The Crazy Boss
             </p>
-            <div class="d-flex align-items-center justify-content-center mt-4">
+            <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0 ms-3 font16">081386465464</p>
+              <p class="text-light mb-0  font16">081386465464</p>
             </div>
-            <div class="d-flex align-items-center justify-content-center mt-2">
+            <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 ms-3 font16 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font16 mb-0">flex@email.com</p>
             </div>
           </div>
-          <div class="col-md-4 col-12 justify-center">
+          <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
               class="text-white text-center fw-bold font20 font18-mobile mb-1"
             >
               Floris Kingma
             </h1>
-            <p class="fw-lighter text-center text-white">
+            <p class="fw-lighter text-center text-white mb-0">
               Film Director
             </p>
-            <div class="d-flex align-items-center justify-content-center mt-4">
+            <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0 ms-3 font16">081386465464</p>
+              <p class="text-light mb-0  font16">081386465464</p>
             </div>
-            <div class="d-flex align-items-center justify-content-center mt-2">
+            <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 ms-3 font16 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font16 mb-0">flex@email.com</p>
             </div>
           </div>
-          <div class="col-md-4 col-12 justify-center">
+          <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
               class="text-white text-center fw-bold font20 font18-mobile mb-1"
             >
               Michael Sewandono
             </h1>
-            <p class="fw-lighter text-center text-white">
+            <p class="fw-lighter text-center text-white mb-0">
               Film Director
             </p>
-            <div class="d-flex align-items-center justify-content-center mt-4">
+            <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0 ms-3 font16">081386465464</p>
+              <p class="text-light mb-0  font16">081386465464</p>
             </div>
-            <div class="d-flex align-items-center justify-content-center mt-2">
+            <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 ms-3 font16 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font16 mb-0">flex@email.com</p>
             </div>
           </div>
         </div>
@@ -78,14 +78,14 @@
       >
         OUR OFFICE
       </h1>
-      <div class="w-responsive px-responsive mx-auto mt-4">
+      <div class="w-responsive px-responsive mx-auto mt-3">
         <h5
-          class="text-responsive font16 font18-mobile text-light fw-light l-42 letter-extra"
+          class="text-center font16 font18-mobile text-light fw-light l-42 letter-extra"
         >
           Citylofts 920 Jl. KH. Mas Mansyur Kav.121 <br />
           Jakarta 10220, Indonesia
         </h5>
-        <div class="text-center my-4">
+        <div class="text-center mt-4 mb-5">
           <button
             data-bs-toggle="modal"
             data-bs-target="#modalContact"
@@ -104,7 +104,7 @@
     </div>
     <!-- END: OFFICE -->
     <!-- START: FOOTER -->
-    <div class="">
+    <div class="mt-4">
       <div class="mx-auto">
         <Footer />
       </div>
@@ -119,12 +119,21 @@
 .mt-content {
   margin-top: 8rem;
 }
+.h-responsive {
+  height: 100vh;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .h-responsive {
+    height: auto;
+  }
   .mt-title {
     margin-top: 2rem;
   }
   .mt-content {
     margin-top: 4rem;
+  }
+  .mb-mobile {
+    margin-bottom: 3rem;
   }
 }
 </style>
