@@ -89,7 +89,37 @@ export default {
     height: auto !important;
   }
 } */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media (min-width: 576px) {
+  .image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+    background-position: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+    background-position: center;
+  }
+}
+
+@media (min-width: 1200px) {
   .image {
     display: block;
     width: 100%;

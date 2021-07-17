@@ -121,7 +121,7 @@
     </div> -->
     <!-- END: INTERESTED -->
     <!-- START: FOOTER -->
-    <div class="mt-footer">
+    <div class="mt-5">
       <div class="mx-auto">
         <Footer />
       </div>

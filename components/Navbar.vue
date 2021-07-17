@@ -73,6 +73,14 @@
               >CONTACT</nuxt-link
             >
           </li>
+          <li class="nav-item me-5">
+            <nuxt-link
+              class="nav-link  text-light font18 letter-normal px-nav"
+              :class="active == 'Contact' ? 'active fw-bolder' : ''"
+              to="/Contact"
+              >FILMING DURING COVID-19</nuxt-link
+            >
+          </li>
         </ul>
         <!-- <button
           @click="openModal"
