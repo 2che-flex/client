@@ -1,10 +1,7 @@
 <template>
   <nav
-    :class="
-      positionScroll > 20
-        ? 'navbar navbar-expand-lg navbar-dark bg-black'
-        : 'navbar navbar-expand-lg navbar-dark'
-    "
+    class="navbar navbar-expand-lg navbar-dark"
+    :class="positionScroll > 20 ? 'bg-black' : ''"
   >
     <div class="container px-0">
       <a class="navbar-brand me-0" href="/"
