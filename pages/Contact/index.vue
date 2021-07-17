@@ -104,7 +104,7 @@
     </div>
     <!-- END: OFFICE -->
     <!-- START: FOOTER -->
-    <div class="mt-4">
+    <div class="mt-5">
       <div class="mx-auto">
         <Footer />
       </div>

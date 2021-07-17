@@ -36,11 +36,8 @@
           </li> -->
           <li class="nav-item dropdown me-5">
             <a
-              :class="
-                $route.hash == '#work'
-                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
-                  : 'nav-link  text-light font18 letter-normal px-nav'
-              "
+              class="nav-link  text-light font18 letter-normal px-nav"
+              :class="$route.hash == '#work' ? 'active fw-bolder' : ''"
               href="/"
               :id="$route.name !== 'Contact' ? 'navbarDropdown' : ''"
               :role="$route.name !== 'Contact' ? 'button' : ''"
@@ -62,22 +59,16 @@
           </li>
           <li class="nav-item me-5">
             <nuxt-link
-              :class="
-                $route.hash == '#story'
-                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
-                  : 'nav-link  text-light font18 letter-normal px-nav'
-              "
+              class="nav-link  text-light font18 letter-normal px-nav"
+              :class="$route.hash == '#story' ? 'active fw-bolder' : ''"
               :to="$route.name !== 'Contact' ? '#story' : '/'"
               >FLEX STORY</nuxt-link
             >
           </li>
           <li class="nav-item me-5">
             <nuxt-link
-              :class="
-                active == 'Contact'
-                  ? 'nav-link active fw-bolder text-light font18 letter-normal px-nav'
-                  : 'nav-link  text-light font18 letter-normal px-nav'
-              "
+              class="nav-link  text-light font18 letter-normal px-nav"
+              :class="active == 'Contact' ? 'active fw-bolder' : ''"
               to="/Contact"
               >CONTACT</nuxt-link
             >
