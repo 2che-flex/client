@@ -133,7 +133,7 @@ export default {
   .image {
     display: block;
     width: 100%;
-    height: 36vh !important;
+    height: 34vh !important;
     object-fit: scale-down;
     background-position: center;
   }

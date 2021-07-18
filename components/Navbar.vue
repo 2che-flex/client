@@ -36,6 +36,7 @@
           </li> -->
           <li class="nav-item dropdown me-5">
             <a
+              @click="showBar()"
               class="nav-link  text-light font18 letter-normal px-nav"
               :class="$route.hash == '#work' ? 'active fw-bolder' : ''"
               href="/"
@@ -46,10 +47,14 @@
             >
               WORK
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul
+              class="dropdown-menu bg-black"
+              :class="flex ? 'flex-responsive' : ''"
+              aria-labelledby="navbarDropdown"
+            >
               <li v-for="(item, i) in categories" :key="i">
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item text-white"
                   @click="sendCategory(item.id)"
                   href="#work"
                   >{{ item.name }}</a
@@ -100,7 +105,8 @@ export default {
   props: ["active", "categories"],
   data() {
     return {
-      positionScroll: 0
+      positionScroll: 0,
+      flex: false
     };
   },
   methods: {
@@ -115,6 +121,9 @@ export default {
     },
     sendCategory(list) {
       this.$emit("getProject", list);
+    },
+    showBar() {
+      this.flex = !this.flex;
     }
   },
   mounted() {
@@ -127,7 +136,20 @@ export default {
 .bg-black {
   background-color: black;
 }
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: white !important;
+  background-color: #0e0e0e !important;
+}
+.flex-responsive {
+  display: flex;
+  flex-direction: row;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .flex-responsive {
+    display: flex;
+    flex-direction: column;
+  }
   .mt-mobile {
     margin-top: 1.5rem;
   }
