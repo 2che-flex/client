@@ -1,7 +1,7 @@
 <template>
   <div
     @click="showDetail()"
-    class="card border-n container-image m-2"
+    class="card border-n container-image m-0"
     style="border-radius:0px"
   >
     <img :src="url" class="card-img-top w-100 image" :alt="description" />
@@ -26,6 +26,13 @@ export default {
   props: ["title", "type", "url", "description", "videoUrl"],
   methods: {
     showDetail() {
+      console.log(
+        this.title,
+        this.type,
+        this.url,
+        this.description,
+        "hai arinda"
+      );
       this.$emit(
         "showDetail",
         this.title,
@@ -46,7 +53,17 @@ export default {
   object-fit: cover;
   background-position: center;
 }
-
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: black !important;
+  background-clip: border-box;
+  border: 0px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -87,7 +104,7 @@ export default {
     display: block;
     width: 100%;
     height: auto !important;
-    object-fit: cover;
+    object-fit: scale-down;
     background-position: center;
   }
 }
@@ -97,7 +114,7 @@ export default {
     display: block;
     width: 100%;
     height: auto !important;
-    object-fit: cover;
+    object-fit: scale-down;
     background-position: center;
   }
 }
@@ -107,7 +124,7 @@ export default {
     display: block;
     width: 100%;
     height: auto !important;
-    object-fit: cover;
+    object-fit: scale-down;
     background-position: center;
   }
 }
@@ -116,8 +133,8 @@ export default {
   .image {
     display: block;
     width: 100%;
-    height: auto !important;
-    object-fit: cover;
+    height: 36vh !important;
+    object-fit: scale-down;
     background-position: center;
   }
 }

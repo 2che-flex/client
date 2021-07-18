@@ -21,6 +21,7 @@ export default {
   css: [
     '~/node_modules/bootstrap/dist/css/bootstrap.min.css',
     "@/assets/style/style.css",
+    "@/assets/style/dots.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

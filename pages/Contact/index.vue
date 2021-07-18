@@ -5,7 +5,7 @@
     <!-- END: NAVBAR -->
 
     <!-- START: TEAM -->
-    <div class="mt-title">
+    <div class="mt-titleV2">
       <h1
         class="fw-bolder font30 font28-mobile letter-normal text-center text-light"
       >
@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
-              class="text-white text-center fw-bold font20 font18-mobile mb-1"
+              class="text-white text-center fw-bold font18 font16-mobile mb-1"
             >
               Novindra Christian
             </h1>
@@ -24,16 +24,16 @@
             </p>
             <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0  font16">081386465464</p>
+              <p class="text-light mb-0 font15">081386465464</p>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 font16 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font15 mb-0">flex@email.com</p>
             </div>
           </div>
           <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
-              class="text-white text-center fw-bold font20 font18-mobile mb-1"
+              class="text-white text-center fw-bold font18 font16-mobile mb-1"
             >
               Floris Kingma
             </h1>
@@ -42,16 +42,16 @@
             </p>
             <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0  font16">081386465464</p>
+              <p class="text-light mb-0 font15">081386465464</p>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 font16 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font15 mb-0">flex@email.com</p>
             </div>
           </div>
           <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
-              class="text-white text-center fw-bold font20 font18-mobile mb-1"
+              class="text-white text-center fw-bold font18 font16-mobile mb-1"
             >
               Michael Sewandono
             </h1>
@@ -60,11 +60,11 @@
             </p>
             <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0  font16">081386465464</p>
+              <p class="text-light mb-0 font15">081386465464</p>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 font16 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font15 mb-0">flex@email.com</p>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
     </div>
     <!-- END: TEAM -->
     <!-- START: OFFICE -->
-    <div class="mt-office">
+    <div class="mt-titleV2">
       <h1
         class="fw-bolder font30 font28-mobile letter-normal text-center text-light"
       >
@@ -113,8 +113,8 @@
   </div>
 </template>
 <style scoped>
-.mt-title {
-  margin-top: 5rem;
+.mt-titleV2 {
+  margin-top: 3rem;
 }
 .mt-content {
   margin-top: 8rem;
@@ -122,10 +122,10 @@
 .h-responsive {
   height: 100vh;
 }
-.mt-office {
-  margin-top: 5rem;
-}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .mt-titleV2 {
+    margin-top: 3rem;
+  }
   .h-responsive {
     height: auto;
   }
@@ -137,9 +137,6 @@
   }
   .mb-mobile {
     margin-bottom: 3rem;
-  }
-  .mt-office {
-    margin-top: 2.5rem;
   }
 }
 </style>

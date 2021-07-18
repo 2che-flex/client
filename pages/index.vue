@@ -34,13 +34,13 @@
     <!-- END: HERO SECTION -->
 
     <!-- START: POPULAR WORK -->
-    <div class="mt-content" id="work">
+    <div class="mt-contentv2" id="work">
       <h1
         class="fw-bolder font30 font28-mobile letter-normal text-center text-white"
       >
         POPULAR WORK
       </h1>
-      <div class="mt-4 mx-auto" v-if="data.length > 0">
+      <div class="mt-4 mx-auto px-slider" v-if="data.length > 0">
         <VueSlickCarousel v-bind="settings" :dots="true" :arrows="true">
           <div v-for="(item, i) in data" :key="i">
             <Card
@@ -68,7 +68,7 @@
     <!-- END: POPULAR WORK -->
     <!-- START: WE ARE FLEX -->
     <div
-      class="mt-content"
+      class="mt-contentv2"
       id="story"
       data-aos="fade-up"
       data-aos-duration="3000"
@@ -139,7 +139,6 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import axios from "axios";
 export default {
   components: { VueSlickCarousel },
@@ -155,6 +154,7 @@ export default {
         slidesToScroll: 1
       },
       settings: {
+        dots: true,
         infinite: true,
         slidesToShow: 3,
         speed: 200,
@@ -176,7 +176,8 @@ export default {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              initialSlide: 1
+              initialSlide: 1,
+              dots: true
             }
           },
           {
@@ -184,14 +185,16 @@ export default {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              initialSlide: 1
+              initialSlide: 1,
+              dots: true
             }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              dots: true
             }
           }
         ]
@@ -281,7 +284,17 @@ export default {
   z-index: 999;
   opacity: 0.7;
 }
+.mt-contentv2 {
+  margin-top: 7rem;
+}
+.px-slider {
+  padding: 0 3rem;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .px-slider {
+    padding: 0 2rem;
+  }
   .coverBanner {
     position: absolute;
     width: 100%;
@@ -293,6 +306,9 @@ export default {
     );
     z-index: 999;
     opacity: 0.7;
+  }
+  .mt-contentv2 {
+    margin-top: 5rem;
   }
 }
 </style>
