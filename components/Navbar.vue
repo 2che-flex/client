@@ -121,6 +121,7 @@ export default {
     },
     sendCategory(list) {
       this.$emit("getProject", list);
+      this.showBar();
     },
     showBar() {
       this.flex = !this.flex;
