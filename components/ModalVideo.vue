@@ -22,7 +22,13 @@
           </div> -->
           <div class="modal-body p-0 m-0">
             <!-- <img :src="url" style="width:100%" alt="" /> -->
-            <iframe
+            <video controls autoplay id="myVideo" :src="video" width="100%">
+              Sorry, your browser doesn't support embedded videos, but don't
+              worry, you can
+              <a :href="video">download it</a>
+              and watch it with your favorite video player!
+            </video>
+            <!-- <iframe
               width="100%"
               height="400"
               :src="video"
@@ -30,7 +36,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             >
-            </iframe>
+            </iframe> -->
             <div class="px-3 mt-4 mb-5">
               <h1 class="font24 font18-mobile mb-1">{{ title }}</h1>
               <p class="font18 font14-mobile">{{ description }}</p>
@@ -38,6 +44,7 @@
           </div>
           <div class="modal-footer">
             <button
+              @click="recache()"
               type="button"
               class="btn btn-primary px-4 py-2"
               data-bs-dismiss="modal"
@@ -53,6 +60,16 @@
 
 <script>
 export default {
-  props: ["title", "type", "url", "description", "video"]
+  data() {
+    return {
+      status: false
+    };
+  },
+  props: ["title", "type", "url", "description", "video"],
+  methods: {
+    recache() {
+      this.$emit("recache");
+    }
+  }
 };
 </script>

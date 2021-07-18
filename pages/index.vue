@@ -62,6 +62,7 @@
         :url="dataUrl"
         :description="dataDescription"
         :video="videoLink"
+        @recache="recache"
       />
     </div>
     <!-- END: POPULAR WORK -->
@@ -227,6 +228,13 @@ export default {
       this.dataUrl = url;
       this.dataDescription = description;
       this.videoLink = video;
+    },
+    recache() {
+      this.dataTitle = "";
+      this.dataType = "";
+      this.dataUrl = "";
+      this.dataDescription = "";
+      this.videoLink = "";
     },
     async showBanner() {
       const { data } = await axios.get(

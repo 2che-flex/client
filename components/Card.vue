@@ -26,13 +26,6 @@ export default {
   props: ["title", "type", "url", "description", "videoUrl"],
   methods: {
     showDetail() {
-      console.log(
-        this.title,
-        this.type,
-        this.url,
-        this.description,
-        "hai arinda"
-      );
       this.$emit(
         "showDetail",
         this.title,
