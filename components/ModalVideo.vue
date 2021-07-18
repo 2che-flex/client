@@ -38,8 +38,8 @@
             >
             </iframe> -->
             <div class="px-3 mt-4 mb-4 w-75">
-              <h1 class="font24 font18-mobile mb-3">{{ title }}</h1>
-              <p class="font18 font14-mobile fw-lighter">{{ description }}</p>
+              <h1 class="font24 font18-mobile mb-2">{{ title }}</h1>
+              <p class="font16 font14-mobile fw-lighter">{{ description }}</p>
             </div>
           </div>
           <div class="modal-footer">
