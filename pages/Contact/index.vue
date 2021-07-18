@@ -11,7 +11,7 @@
       >
         Meet Our Team
       </h1>
-      <div class="container mt-5">
+      <div class="container mt-4">
         <div class="row">
           <div class="col-md-4 col-12 justify-center mb-mobile">
             <h1
@@ -72,7 +72,7 @@
     </div>
     <!-- END: TEAM -->
     <!-- START: OFFICE -->
-    <div class="mt-content">
+    <div class="mt-office">
       <h1
         class="fw-bolder font30 font28-mobile letter-normal text-center text-light"
       >
@@ -120,7 +120,10 @@
   margin-top: 8rem;
 }
 .h-responsive {
-  min-height: 100vh;
+  height: 100vh;
+}
+.mt-office {
+  margin-top: 5rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .h-responsive {
@@ -134,6 +137,9 @@
   }
   .mb-mobile {
     margin-bottom: 3rem;
+  }
+  .mt-office {
+    margin-top: 2.5rem;
   }
 }
 </style>
