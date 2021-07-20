@@ -68,7 +68,7 @@
     <!-- END: POPULAR WORK -->
     <!-- START: WE ARE FLEX -->
     <div
-      class="mt-contentv2"
+      class="mt-contentv3"
       id="story"
       data-aos="fade-up"
       data-aos-duration="3000"
@@ -160,44 +160,7 @@ export default {
         speed: 200,
         rows: 2,
         autoplay: true,
-        slidesPerRow: 1,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 800,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 1,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 1,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: true
-            }
-          }
-        ]
+        slidesPerRow: 1
       },
       data: [],
       dataTitle: "",
@@ -287,6 +250,9 @@ export default {
 .mt-contentv2 {
   margin-top: 7rem;
 }
+.mt-contentv3 {
+  margin: 10rem 0;
+}
 .px-slider {
   padding: 0 3rem;
 }
@@ -309,6 +275,9 @@ export default {
   }
   .mt-contentv2 {
     margin-top: 5rem;
+  }
+  .mt-contentv3 {
+    margin-top: 7rem;
   }
 }
 </style>

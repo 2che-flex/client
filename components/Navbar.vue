@@ -1,8 +1,6 @@
 <template>
-  <nav
-    class="navbar navbar-expand-lg navbar-dark"
-    :class="positionScroll > 20 ? 'bg-black' : ''"
-  >
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- :class="positionScroll > 20 ? 'bg-black' : ''" -->
     <div class="container px-0">
       <a class="navbar-brand me-0" href="/"
         ><img src="~/assets/image/LogoFlex.png" class="w-50" alt=""
@@ -48,7 +46,7 @@
               WORK
             </a>
             <ul
-              class="dropdown-menu bg-black"
+              class="dropdown-menu  bg-transparent"
               :class="flex ? 'flex-responsive' : ''"
               aria-labelledby="navbarDropdown"
             >
@@ -140,7 +138,7 @@ export default {
 .dropdown-item:focus,
 .dropdown-item:hover {
   color: white !important;
-  background-color: #0e0e0e !important;
+  background-color: transparent !important;
 }
 .flex-responsive {
   display: flex;

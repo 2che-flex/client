@@ -1,7 +1,7 @@
 <template>
   <div
     @click="showDetail()"
-    class="card border-n container-image m-0"
+    class="card border-n container-image m-2"
     style="border-radius:0px"
   >
     <img :src="url" class="card-img-top w-100 image" :alt="description" />
@@ -49,7 +49,7 @@ export default {
 .image {
   display: block;
   width: 100%;
-  height: 40vh !important;
+  height: 100% !important;
   object-fit: cover;
   background-position: center;
 }
@@ -104,7 +104,7 @@ export default {
     display: block;
     width: 100%;
     height: auto !important;
-    object-fit: scale-down;
+    object-fit: cover;
     background-position: center;
   }
 }
@@ -114,7 +114,7 @@ export default {
     display: block;
     width: 100%;
     height: auto !important;
-    object-fit: scale-down;
+    object-fit: cover;
     background-position: center;
   }
 }
@@ -124,7 +124,7 @@ export default {
     display: block;
     width: 100%;
     height: auto !important;
-    object-fit: scale-down;
+    object-fit: cover;
     background-position: center;
   }
 }
@@ -134,7 +134,8 @@ export default {
     display: block;
     width: 100%;
     height: 34vh !important;
-    object-fit: scale-down;
+    /* object-fit: scale-down; */
+    object-fit: cover;
     background-position: center;
   }
 }
