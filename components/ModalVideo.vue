@@ -23,7 +23,7 @@
           </div> -->
           <div class="modal-body p-0 m-0">
             <!-- <img :src="url" style="width:100%" alt="" /> -->
-            <video
+            <!-- <video
               controls
               autoplay
               class="m-0 p-0"
@@ -35,7 +35,18 @@
               worry, you can
               <a :href="video">download it</a>
               and watch it with your favorite video player!
-            </video>
+            </video> -->
+            <iframe
+              class="m-0 p-0"
+              id="myVideo"
+              width="100%"
+              height="400"
+              :src="video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
             <!-- <iframe
               width="100%"
               height="400"
