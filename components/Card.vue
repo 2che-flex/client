@@ -10,7 +10,8 @@
         <h1 class="font22 fw-bolder" style="letter-spacing: 0.05em;">
           {{ title }}
         </h1>
-        <img class="mt-3" src="~/assets/icon/play.svg" alt="" />
+        <p class="font16 fw-light">{{ description }}</p>
+        <!-- <img class="mt-3" src="~/assets/icon/play.svg" alt="" /> -->
       </div>
     </div>
     <!-- <div class="card-body">

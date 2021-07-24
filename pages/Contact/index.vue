@@ -13,58 +13,26 @@
       </h1>
       <div class="container mt-4">
         <div class="row">
-          <div class="col-md-4 col-12 justify-center mb-mobile">
+          <div
+            class="col-md-4 col-12 justify-center mb-mobile"
+            v-for="(item, i) in dataContact"
+            :key="i"
+          >
             <h1
               class="text-white text-center fw-bold font18 font16-mobile mb-1"
             >
-              Novindra Christian
+              {{ item.name }}
             </h1>
             <p class="fw-lighter text-center text-white mb-0">
-              The Crazy Boss
+              {{ item.role }}
             </p>
             <div class="d-flex align-items-center justify-content-center mt-3">
               <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0 font15">081386465464</p>
+              <p class="text-light mb-0 font15">{{ item.phone_number }}</p>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-1">
               <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 font15 mb-0">flex@email.com</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 justify-center mb-mobile">
-            <h1
-              class="text-white text-center fw-bold font18 font16-mobile mb-1"
-            >
-              Floris Kingma
-            </h1>
-            <p class="fw-lighter text-center text-white mb-0">
-              Film Director
-            </p>
-            <div class="d-flex align-items-center justify-content-center mt-3">
-              <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0 font15">081386465464</p>
-            </div>
-            <div class="d-flex align-items-center justify-content-center mt-1">
-              <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 font15 mb-0">flex@email.com</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 justify-center mb-mobile">
-            <h1
-              class="text-white text-center fw-bold font18 font16-mobile mb-1"
-            >
-              Michael Sewandono
-            </h1>
-            <p class="fw-lighter text-center text-white mb-0">
-              Film Director
-            </p>
-            <div class="d-flex align-items-center justify-content-center mt-3">
-              <!-- <img src="~/assets/icon/telepon.svg" alt="" /> -->
-              <p class="text-light mb-0 font15">081386465464</p>
-            </div>
-            <div class="d-flex align-items-center justify-content-center mt-1">
-              <!-- <img src="~/assets/icon/gmail3.svg" alt="" /> -->
-              <p class="text-light mb-0 font15 mb-0">flex@email.com</p>
+              <p class="text-light mb-0 font15 mb-0">{{ item.email }}</p>
             </div>
           </div>
         </div>
@@ -112,6 +80,28 @@
     <!-- END: FOOTER  -->
   </div>
 </template>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      dataContact: []
+    };
+  },
+  methods: {
+    async getContact() {
+      const { data } = await axios.get(
+        "https://server-flex.herokuapp.com/api/v1/contact"
+      );
+      this.dataContact = data.users;
+      console.log(data.users, "arinda contact");
+    }
+  },
+  mounted() {
+    this.getContact();
+  }
+};
+</script>
 <style scoped>
 .mt-titleV2 {
   margin-top: 3rem;

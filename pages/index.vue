@@ -67,23 +67,22 @@
     </div>
     <!-- END: POPULAR WORK -->
     <!-- START: WE ARE FLEX -->
-    <div
-      class="mt-contentv3"
-      id="story"
-      data-aos="fade-up"
-      data-aos-duration="3000"
-    >
+
+    <!-- data-aos="fade-up"
+      data-aos-duration="3000" -->
+    <div class="mt-contentv3" id="story">
       <h1 class="text-center text-white px-2 font30 font28-mobile">
         WE ARE FLEX
       </h1>
       <div class="col-md-6 col-12 px-3 mx-auto mt-4">
-        <p class="text-responsive text-light fw-light">
+        <p class="text-responsive text-light fw-light" v-html="dataHistory"></p>
+        <!-- <p class="text-responsive text-light fw-light">
           Flex Films is a full service production company based in Jakarta,
           Indonesia. We have a passion in communicating ideas into a meaningful
           stories. Your business is a unique idea, different from your
           competitors.
-        </p>
-        <p class="text-responsive text-light mt-3 fw-light">
+        </p> -->
+        <!-- <p class="text-responsive text-light mt-3 fw-light">
           Flex Films role is to create the best solution to maximise your target
           audience and its effectiveness. We do this by understanding your
           business, it’s personality and values in order to develop a visual
@@ -93,7 +92,7 @@
           The awards we've ever received are 1 Gold, 2 Silver, 3 Bronze (
           Tokobagus.com Living Room CITRA PARIWARA 2015 ) & Production House Of
           The Year ( Citra Pariwara 2015 )
-        </p>
+        </p> -->
       </div>
     </div>
     <!-- END: WE ARE FLEX -->
@@ -122,7 +121,7 @@
     </div> -->
     <!-- END: INTERESTED -->
     <!-- START: FOOTER -->
-    <div class="mt-5 mb-4">
+    <div class="mb-4">
       <div class="mx-auto">
         <Footer />
       </div>
@@ -145,7 +144,6 @@ export default {
   data() {
     return {
       settingsBanner: {
-        dots: true,
         dotsClass: "slick-dots custom-dot-class",
         edgeFriction: 0.35,
         infinite: false,
@@ -170,7 +168,8 @@ export default {
       dataBanner: [],
       modal: false,
       videoLink: "",
-      dataCategories: []
+      dataCategories: [],
+      dataHistory: {}
     };
   },
   methods: {
@@ -224,12 +223,19 @@ export default {
     },
     openModal(value) {
       this.modal = value;
+    },
+    async getHistory() {
+      const { data } = await axios.get(
+        "https://server-flex.herokuapp.com/api/v1/story/1"
+      );
+      this.dataHistory = data.teks;
     }
   },
   mounted() {
     this.getProject();
     this.showBanner();
     this.getCategories();
+    this.getHistory();
   }
 };
 </script>
@@ -239,19 +245,17 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    #000000 0%,
-    rgba(255, 255, 255, 0) 161.08%
-  );
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 161.08%);
   z-index: 999;
   opacity: 0.7;
+  -webkit-opacity: 0.7; /* WebKit browser e.g. Safari */
+  -khtml-opacity: 0.7;
 }
 .mt-contentv2 {
   margin-top: 7rem;
 }
 .mt-contentv3 {
-  margin: 10rem 0;
+  margin: 12rem 0;
 }
 .px-slider {
   padding: 0 3rem;

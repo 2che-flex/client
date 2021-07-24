@@ -3,14 +3,15 @@
     <div
       class="modal fade"
       id="modalDetail"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
       tabindex="-1"
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
+      @keydown.stop.prevent="recache()"
+      @keyup.stop.prevent="recache()"
+      @keypress.stop.prevent="recache()"
     >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background-color:black !important">
           <!-- <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">{{ title }}</h5>
             <button
@@ -22,7 +23,14 @@
           </div> -->
           <div class="modal-body p-0 m-0">
             <!-- <img :src="url" style="width:100%" alt="" /> -->
-            <video controls autoplay id="myVideo" :src="video" width="100%">
+            <video
+              controls
+              autoplay
+              class="m-0 p-0"
+              id="myVideo"
+              :src="video"
+              width="100%"
+            >
               Sorry, your browser doesn't support embedded videos, but don't
               worry, you can
               <a :href="video">download it</a>
@@ -37,21 +45,20 @@
               allowfullscreen
             >
             </iframe> -->
-            <div class="px-3 mt-4 mb-4 w-75">
+            <!-- <div class="px-3 mt-4 mb-4 w-75">
               <h1 class="font24 font18-mobile mb-2">{{ title }}</h1>
               <p class="font16 font14-mobile fw-lighter">{{ description }}</p>
-            </div>
+            </div> -->
           </div>
-          <div class="modal-footer">
+          <!-- <div class="modal-footer">
             <button
-              @click="recache()"
               type="button"
               class="btn btn-primary px-4 py-2"
               data-bs-dismiss="modal"
             >
               Close
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
