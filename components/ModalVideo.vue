@@ -9,6 +9,7 @@
       @keydown.stop.prevent="recache()"
       @keyup.stop.prevent="recache()"
       @keypress.stop.prevent="recache()"
+      @click.stop.prevent="recache()"
     >
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content" style="background-color:black !important">
@@ -86,6 +87,7 @@ export default {
   props: ["title", "type", "url", "description", "video"],
   methods: {
     recache() {
+      // alert("tertekan");
       this.$emit("recache");
     }
   }

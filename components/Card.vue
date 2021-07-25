@@ -1,16 +1,19 @@
 <template>
   <div
     @click="showDetail()"
-    class="card border-n container-image m-2"
+    class="card border-n container-image m-card"
     style="border-radius:0px"
   >
     <img :src="url" class="card-img-top w-100 image" :alt="description" />
     <div class="overlay">
       <div class="text">
-        <h1 class="font22 fw-bolder" style="letter-spacing: 0.05em;">
+        <h1
+          class="font22 font14-mobile mb-1 fw-bolder"
+          style="letter-spacing: 0.05em;"
+        >
           {{ title }}
         </h1>
-        <p class="font16 fw-light">{{ description }}</p>
+        <p class="font16 font12-mobile mb-0 fw-light">{{ description }}</p>
         <!-- <img class="mt-3" src="~/assets/icon/play.svg" alt="" /> -->
       </div>
     </div>
@@ -47,6 +50,9 @@ export default {
 };
 </script>
 <style scoped>
+.m-card {
+  margin: 0.2rem;
+}
 .image {
   display: block;
   width: 100%;

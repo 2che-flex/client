@@ -169,7 +169,7 @@ export default {
       modal: false,
       videoLink: "",
       dataCategories: [],
-      dataHistory: {}
+      dataHistory: "Waiting"
     };
   },
   methods: {
@@ -258,12 +258,12 @@ export default {
   margin: 12rem 0;
 }
 .px-slider {
-  padding: 0 3rem;
+  padding: 0 2.5rem;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .px-slider {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   .coverBanner {
     position: absolute;
