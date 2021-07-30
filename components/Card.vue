@@ -86,6 +86,7 @@ export default {
 
 .container-image:hover .overlay {
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .text {

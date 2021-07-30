@@ -252,7 +252,7 @@ export default {
   -khtml-opacity: 0.7;
 }
 .mt-contentv2 {
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 .mt-contentv3 {
   margin: 12rem 0;
