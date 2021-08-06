@@ -3,7 +3,7 @@
     <!-- :class="positionScroll > 20 ? 'bg-black' : ''" -->
     <div class="container px-0">
       <a class="navbar-brand me-0" href="/"
-        ><img src="~/assets/image/LogoFlex.png" class="w-50" alt=""
+        ><img src="~/assets/image/flex2.png" class="w-25" alt=""
       /></a>
       <button
         class="navbar-toggler"
