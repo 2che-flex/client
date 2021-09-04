@@ -67,19 +67,13 @@ export default {
   },
   methods: {
     sendTalk() {
-      console.log(
-        this.namaPengirim,
-        this.emailPengirim,
-        this.noHp,
-        "arinda wkwk"
-      );
       let newData = {
         name: this.namaPengirim,
         email: this.emailPengirim,
         phone_number: this.noHp
       };
       axios
-        .post(" https://server-flex.herokuapp.com/api/v1/client", newData)
+        .post("https://service.flx.asia/api/v1/client", newData)
         .then(response => {
           this.$emit("openModal", false);
         })

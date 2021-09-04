@@ -1,7 +1,9 @@
 <template>
   <div class="px-0 overflow-hidden bg-black h-responsive">
     <!-- START: NAVBAR -->
-    <div class="container"><Navbar :active="'Contact'" /></div>
+    <div class="container">
+      <Navbar :active="'contact'" />
+    </div>
     <!-- END: NAVBAR -->
 
     <!-- START: TEAM -->
@@ -47,12 +49,13 @@
         OUR OFFICE
       </h1>
       <div class="w-responsive px-responsive mx-auto mt-3">
-        <h5
-          class="text-center font16 font18-mobile text-light fw-light l-42 letter-extra"
-        >
-          Citylofts 920 Jl. KH. Mas Mansyur Kav.121 <br />
-          Jakarta 10220, Indonesia
-        </h5>
+        <div class="col-md-8 mx-auto col-auto">
+          <h5
+            class="text-center font16 font14-mobile  text-light fw-light l-42 letter-extra"
+          >
+            Citylofts 920 Jl. KH. Mas Mansyur Kav.121 Jakarta 10220, Indonesia
+          </h5>
+        </div>
         <div class="text-center mt-4 mb-5">
           <button
             data-bs-toggle="modal"
@@ -72,7 +75,7 @@
     </div>
     <!-- END: OFFICE -->
     <!-- START: FOOTER -->
-    <div class="mt-5">
+    <div class="mt-footer">
       <div class="mx-auto">
         <Footer />
       </div>
@@ -91,10 +94,9 @@ export default {
   methods: {
     async getContact() {
       const { data } = await axios.get(
-        "https://server-flex.herokuapp.com/api/v1/contact"
+        "https://service.flx.asia/api/v1/contact"
       );
       this.dataContact = data.users;
-      console.log(data.users, "arinda contact");
     }
   },
   mounted() {
@@ -104,13 +106,16 @@ export default {
 </script>
 <style scoped>
 .mt-titleV2 {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 }
 .mt-content {
   margin-top: 8rem;
 }
 .h-responsive {
   height: 100vh;
+}
+.mt-footer {
+  margin-top: 6rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mt-titleV2 {

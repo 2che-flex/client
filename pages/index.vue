@@ -18,14 +18,15 @@
       <div class="coverBanner"></div>
       <VueSlickCarousel v-bind="settingsBanner">
         <div v-for="(banner, i) in dataBanner" :key="i">
-          <img :src="banner.image_url" class="img-hero" alt="" />
+          <img :src="banner.imageData" class="img-hero" alt="" />
           <!-- <iframe
             width="100%"
-            height="400"
-            src="https://www.youtube-nocookie.com/embed/_QrBbXRK844?autoplay=1&controls=0&mute=1"
+            height="100%"
+            :src="banner.video_url"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            volume="0"
           >
           </iframe> -->
         </div>
@@ -49,7 +50,7 @@
               @showDetail="showDetail"
               :title="item.title"
               :description="item.description"
-              :url="item.url"
+              :url="item.imageData"
               :type="item.type"
               :videoUrl="item.video_url"
             />
@@ -177,15 +178,16 @@ export default {
       console.log(list, "home");
     },
     async getProject(list) {
-      const { data } = await axios.get(
-        `https://server-flex.herokuapp.com/api/v1`
-      );
+      const { data } = await axios.get(`https://service.flx.asia/api/v1`);
       let work = data.items;
       this.data =
         list == undefined ? work : work.filter(e => e.CategoryId == list);
       this.data.length <= 4
         ? (this.settings.slidesToShow = 2)
         : (this.settings.slidesToShow = 3);
+      this.data.length <= 2
+        ? (this.settings.rows = 1)
+        : (this.settings.rows = 2);
     },
     showDetail(title, type, url, description, video) {
       this.dataTitle = title;
@@ -203,14 +205,14 @@ export default {
     },
     async showBanner() {
       const { data } = await axios.get(
-        "https://server-flex.herokuapp.com/api/v1/banner"
+        "https://service.flx.asia/api/v1/banner"
       );
       this.dataBanner = data.videos;
       // console.log(data.videos, "banner");
     },
     async getCategories() {
       const { data } = await axios.get(
-        "https://server-flex.herokuapp.com/api/v1/category"
+        "https://service.flx.asia/api/v1/category"
       );
       // console.log(data.categories, "cate");
       this.dataCategories = [
@@ -226,9 +228,10 @@ export default {
     },
     async getHistory() {
       const { data } = await axios.get(
-        "https://server-flex.herokuapp.com/api/v1/story/1"
+        "https://service.flx.asia/api/v1/story/1"
       );
-      this.dataHistory = data.teks;
+      console.log(data, "data");
+      this.dataHistory = data.textHtml;
     }
   },
   mounted() {

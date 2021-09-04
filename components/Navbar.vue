@@ -2,9 +2,11 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <!-- :class="positionScroll > 20 ? 'bg-black' : ''" -->
     <div class="container px-0">
-      <a class="navbar-brand me-0" href="/"
-        ><img src="~/assets/image/flex2.png" class="w-25" alt=""
-      /></a>
+      <div>
+        <a class="navbar-brand mx-2" href="/"
+          ><img src="~/assets/image/flex2.png" class="w-25" alt=""
+        /></a>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -38,10 +40,34 @@
               class="nav-link  text-light font18 letter-normal px-nav"
               :class="$route.hash == '#work' ? 'active fw-bolder' : ''"
               href="/"
-              :id="$route.name !== 'Contact' ? 'navbarDropdown' : ''"
-              :role="$route.name !== 'Contact' ? 'button' : ''"
-              :data-bs-toggle="$route.name !== 'Contact' ? 'dropdown' : ''"
-              :aria-expanded="$route.name !== 'Contact' ? 'false' : ''"
+              :id="
+                $route.name !== 'contact' &&
+                $route.name !== 'filmingduringcovid' &&
+                $route.name !== 'services'
+                  ? 'navbarDropdown'
+                  : ''
+              "
+              :role="
+                $route.name !== 'contact' &&
+                $route.name !== 'filmingduringcovid' &&
+                $route.name !== 'services'
+                  ? 'button'
+                  : ''
+              "
+              :data-bs-toggle="
+                $route.name !== 'contact' &&
+                $route.name !== 'filmingduringcovid' &&
+                $route.name !== 'services'
+                  ? 'dropdown'
+                  : ''
+              "
+              :aria-expanded="
+                $route.name !== 'contact' &&
+                $route.name !== 'filmingduringcovid' &&
+                $route.name !== 'services'
+                  ? 'false'
+                  : ''
+              "
             >
               WORK
             </a>
@@ -64,23 +90,37 @@
             <nuxt-link
               class="nav-link  text-light font18 letter-normal px-nav"
               :class="$route.hash == '#story' ? 'active fw-bolder' : ''"
-              :to="$route.name !== 'Contact' ? '#story' : '/'"
+              :to="
+                $route.name !== 'contact' &&
+                $route.name !== 'filmingduringcovid' &&
+                $route.name !== 'services'
+                  ? '#story'
+                  : '/'
+              "
               >FLEX STORY</nuxt-link
             >
           </li>
           <li class="nav-item me-5">
             <nuxt-link
               class="nav-link  text-light font18 letter-normal px-nav"
-              :class="active == 'Contact' ? 'active fw-bolder' : ''"
-              to="/Contact"
-              >CONTACT</nuxt-link
+              :class="active == 'services' ? 'active fw-bolder' : ''"
+              to="/services"
+              >SERVICES</nuxt-link
             >
           </li>
           <li class="nav-item me-5">
             <nuxt-link
               class="nav-link  text-light font18 letter-normal px-nav"
-              :class="active == 'Contact' ? 'active fw-bolder' : ''"
-              to="/Contact"
+              :class="active == 'contact' ? 'active fw-bolder' : ''"
+              to="/contact"
+              >CONTACT</nuxt-link
+            >
+          </li>
+          <li class="nav-item me-5" v-if="titleNavbar !== 'kosong'">
+            <nuxt-link
+              class="nav-link  text-light font18 letter-normal px-nav"
+              :class="active == 'filmingduringcovid' ? 'active fw-bolder' : ''"
+              to="/filmingduringcovid"
               >FILMING DURING COVID-19</nuxt-link
             >
           </li>
@@ -99,12 +139,14 @@
   </nav>
 </template>
 <script>
+import axios from "axios";
 export default {
   props: ["active", "categories"],
   data() {
     return {
       positionScroll: 0,
-      flex: false
+      flex: false,
+      titleNavbar: ""
     };
   },
   methods: {
@@ -123,10 +165,18 @@ export default {
     },
     showBar() {
       this.flex = !this.flex;
+    },
+    async getCovid() {
+      const { data } = await axios.get(
+        `https://service.flx.asia/api/v1/navbar?active=true`
+      );
+      console.log(data[0].name, "data covid");
+      this.titleNavbar = data.length == 0 ? "kosong" : data[0].name;
     }
   },
   mounted() {
     this.cek();
+    this.getCovid();
     window.addEventListener("scroll", this.updateScroll);
   }
 };

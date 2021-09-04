@@ -8,7 +8,7 @@
     <div class="overlay">
       <div class="text">
         <h1
-          class="font22 font14-mobile mb-1 fw-bolder"
+          class="font22 font14-mobile mb-2 fw-bolder"
           style="letter-spacing: 0.05em;"
         >
           {{ title }}
@@ -30,13 +30,6 @@ export default {
   props: ["title", "type", "url", "description", "videoUrl"],
   methods: {
     showDetail() {
-      console.log(
-        this.title,
-        this.type,
-        this.url,
-        this.description,
-        "hai arinda"
-      );
       this.$emit(
         "showDetail",
         this.title,
@@ -56,7 +49,7 @@ export default {
 .image {
   display: block;
   width: 100%;
-  height: 100% !important;
+  height: 100px !important;
   object-fit: cover;
   background-position: center;
 }
@@ -90,6 +83,7 @@ export default {
 }
 
 .text {
+  width: 80%;
   color: white;
   font-size: 20px;
   position: absolute;
@@ -111,7 +105,7 @@ export default {
   .image {
     display: block;
     width: 100%;
-    height: auto !important;
+    height: 100px !important;
     object-fit: cover;
     background-position: center;
   }
@@ -121,7 +115,7 @@ export default {
   .image {
     display: block;
     width: 100%;
-    height: auto !important;
+    height: 140px !important;
     object-fit: cover;
     background-position: center;
   }
@@ -131,7 +125,7 @@ export default {
   .image {
     display: block;
     width: 100%;
-    height: auto !important;
+    height: 180px !important;
     object-fit: cover;
     background-position: center;
   }
