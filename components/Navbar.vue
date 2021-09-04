@@ -4,7 +4,7 @@
     <div class="container px-0">
       <div>
         <a class="navbar-brand mx-2" href="/"
-          ><img src="~/assets/image/flex2.png" class="w-25" alt=""
+          ><img src="~/assets/image/flex2.png" class="w-logo" alt=""
         /></a>
       </div>
       <button
@@ -194,7 +194,13 @@ export default {
   display: flex;
   flex-direction: row;
 }
+.w-logo {
+  width: 25%;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .w-logo {
+    width: 15%;
+  }
   .flex-responsive {
     display: flex;
     flex-direction: column;

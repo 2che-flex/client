@@ -5,7 +5,12 @@
         <div class="row">
           <div class="col " v-for="(item, i) in dataSocial" :key="i">
             <a :href="item.url" target="blank">
-              <img :src="item.imageData" class="w-100" alt="" />
+              <img
+                :src="item.imageData"
+                class="w-100"
+                alt=""
+                style="max-width:30px"
+              />
             </a>
           </div>
         </div>

@@ -14,7 +14,7 @@
         SERVICES
       </h1>
       <div class="container mt-4">
-        <div class="col-md-6 col-12 px-3 mx-auto mt-4">
+        <div class="col-md-8 col-12 px-3 mx-auto mt-4">
           <p
             class="text-responsive text-light fw-light"
             v-html="textServices"

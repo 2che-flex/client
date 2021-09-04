@@ -16,31 +16,22 @@
     <section v-if="dataBanner.length > 0">
       <!-- <img src="~/assets/image/img-hero.png" class="img-hero" alt="" /> -->
       <div class="coverBanner"></div>
-      <VueSlickCarousel v-bind="settingsBanner">
-        <div v-for="(banner, i) in dataBanner" :key="i">
-          <img :src="banner.imageData" class="img-hero" alt="" />
-          <!-- <iframe
-            width="100%"
-            height="100%"
-            :src="banner.video_url"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            volume="0"
-          >
-          </iframe> -->
-        </div>
-      </VueSlickCarousel>
+      <div>
+        <video autoplay muted loop id="myVideo">
+          <source :src="dataBanner[0].video_url" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
     </section>
     <!-- END: HERO SECTION -->
 
     <!-- START: POPULAR WORK -->
     <div class="mt-contentv2" id="work">
-      <h1
+      <!-- <h1
         class="fw-bolder font30 font28-mobile letter-normal text-center text-white"
       >
         POPULAR WORK
-      </h1>
+      </h1> -->
       <div class="mt-4 mx-auto px-slider" v-if="data.length > 0">
         <VueSlickCarousel v-bind="settings" :dots="true" :arrows="true">
           <div v-for="(item, i) in data" :key="i">
@@ -77,50 +68,10 @@
       </h1>
       <div class="col-md-6 col-12 px-3 mx-auto mt-4">
         <p class="text-responsive text-light fw-light" v-html="dataHistory"></p>
-        <!-- <p class="text-responsive text-light fw-light">
-          Flex Films is a full service production company based in Jakarta,
-          Indonesia. We have a passion in communicating ideas into a meaningful
-          stories. Your business is a unique idea, different from your
-          competitors.
-        </p> -->
-        <!-- <p class="text-responsive text-light mt-3 fw-light">
-          Flex Films role is to create the best solution to maximise your target
-          audience and its effectiveness. We do this by understanding your
-          business, it’s personality and values in order to develop a visual
-          stories to connect with your target audience.
-        </p>
-        <p class="text-responsive text-light mt-3 fw-light">
-          The awards we've ever received are 1 Gold, 2 Silver, 3 Bronze (
-          Tokobagus.com Living Room CITRA PARIWARA 2015 ) & Production House Of
-          The Year ( Citra Pariwara 2015 )
-        </p> -->
       </div>
     </div>
     <!-- END: WE ARE FLEX -->
-    <!-- START: INTERESTED -->
-    <!-- <div class="mt-content" data-aos="fade-up" data-aos-duration="3000">
-      <h1 class="text-center text-white px-responsive">
-        Interested to Work With Us ?
-      </h1>
-      <div class="w-responsive  mx-auto mt-4">
-        <p class="text-responsive text-light fw-light px-responsive">
-          Ready to take it a step further? Let’s start talking about your
-          project or idea and find out how FLEX Films can help your brand grow.
-        </p>
-        <div class="text-center mt-5">
-          <button
-            @click="openModal(true)"
-            data-bs-toggle="modal"
-            data-bs-target="#modalContact"
-            class="btn btn-theme px-4 fw-light rounded-pill"
-            type="submit"
-          >
-            Let's Talk
-          </button>
-        </div>
-      </div>
-    </div> -->
-    <!-- END: INTERESTED -->
+
     <!-- START: FOOTER -->
     <div class="mb-4">
       <div class="mx-auto">
@@ -244,6 +195,14 @@ export default {
 </script>
 
 <style scoped>
+#myVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background-position: center;
+}
 .coverBanner {
   position: absolute;
   width: 100%;
@@ -265,6 +224,12 @@ export default {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #myVideo {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    background-position: center;
+  }
   .px-slider {
     padding: 0 1rem;
   }
