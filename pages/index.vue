@@ -16,11 +16,14 @@
     <section v-if="dataBanner.length > 0">
       <!-- <img src="~/assets/image/img-hero.png" class="img-hero" alt="" /> -->
       <div class="coverBanner"></div>
-      <div>
+      <div v-if="dataBanner[0].show !== 'photo'">
         <video autoplay muted loop id="myVideo">
           <source :src="dataBanner[0].video_url" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
+      </div>
+      <div v-else>
+        <img :src="dataBanner[0].imageData" class="img-hero" alt="" />
       </div>
     </section>
     <!-- END: HERO SECTION -->
